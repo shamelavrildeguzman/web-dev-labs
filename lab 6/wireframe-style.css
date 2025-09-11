@@ -1,0 +1,30 @@
+body {
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.container {
+    width: 70%;
+    margin: 30px auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 20px 40px;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+footer {
+    text-align: center;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 10px;
+    background-color: gainsboro;
+    position: relative;
+
+}
