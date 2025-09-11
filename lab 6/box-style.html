@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Style</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f8;
+      margin: 30px;
+    }
+
+    .box {
+      width: 250px;
+      padding: 20px;
+      margin: 20px;
+      background-color: #8fbc8f; 
+      display: inline-block;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .solid {
+      border: 2px solid #006400;
+      border-radius: normal;
+      border-width: 5px;
+      
+    }
+    .double {
+        border: 2px double #006400;
+        border-radius: 4px;
+        border-width: 8px;
+        
+    }
+    .inset {
+        border: 2px inset #006400;
+        border-radius: 8px;
+        border-width: 5px;
+        
+    }
+    .dotted {
+        border: 2px dotted #006400;
+        border-radius: 12px;
+        border-width: 5px;
+        
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Box Styling</h1>
+
+    <div class="box solid">
+    <h2>Solid Border</h2>
+    <p>normal corners.</p>
+  </div>
+
+  <div class="box double">
+    <h2>Double Border</h2>
+    <p>double border w/ round corners</p>
+  </div>
+
+  <div class="box inset">
+    <h2>Inset Border</h2>
+    <p>inset border w/ rounder corners</p>
+  </div>
+
+<div class="box dotted">
+    <h2>Dotted Border</h2>
+    <p>dotted border w/ roundest corners</p>
+
+</div>
+</body>
+</html>

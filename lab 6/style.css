@@ -1,0 +1,10 @@
+.myButton {
+    background-color: green;
+    color: azure;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+.myButton:hover {
+    background-color:gainsboro;
+}
