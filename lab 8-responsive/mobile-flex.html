@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Flex Responsive</title>
-    <style>
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
-        }
-        .box {
-            width: 350px;
-            height: 200px;
-            background-color: darkseagreen;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            border: 2px solid #333;
-            border-radius: 5px;
-        }
-
-    @media (min-width: 768px) {
-        .container {
-            flex-direction: row;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile First Flexbox</title>
+  <style>
+    
+    .container {
+      display: flex;
+      flex-direction: column; 
+      gap: 10px;
+      padding: 10px;
     }
-    </style>
+
+    .box {
+      border: 2px solid #333;
+      padding: 20px;
+      text-align: center;
+      font-size: 18px;
+      color: white;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+    }
+
+    
+    .box1 { background-color: #3498db; } 
+    .box2 { background-color: #2ecc71; }  
+    .box3 { background-color: #e74c3c; }  
+
+    
+    .box:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+
+   
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+    }
+  </style>
 </head>
 <body>
-   <h1 style="text-align: center;">Flexbox Example</h1>
-
-    <div class="container">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
-    </div>
-    
+  <div class="container">
+    <h1 style="text-align: center;">Responsive Flexbox Layout</h1>
+    <p style="text-align: center;">This page demonstrates a mobile-first design with flexbox and queries.</p>
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+    <div class="box box3">Box 3</div>
+  </div>
 </body>
 </html>
