@@ -91,6 +91,11 @@ h2 {
   border-bottom: none;
 }
 
+.price {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
 @media (max-width: 768px) {
   .menu-box {
     grid-template-columns: 1fr; 
