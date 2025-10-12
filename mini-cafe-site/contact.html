@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cof's Café - Contact</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #fdfdf8;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+     background: linear-gradient(135deg, #2e7d32, #66bb6a);
+     color: white;
+     padding: 60px 20px;
+     text-align: center;
+    }
+
+    header h1 {
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #388e3c;
+      z-index: 100;
+      position: sticky;
+      top: 0;
+    }
+  
+   nav a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+    }
+
+   nav a:hover {
+      background-color: #2e7d32;
+    }
+
+    .contact-section {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contact-section h2 {
+      color: #2e7d32;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .btn-custom {
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .btn-custom:hover {
+      background-color: #388e3c;
+    }
+
+    footer {
+      text-align: center;
+      background: #2e7d32;
+      color: white;
+      padding: 25px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Cof's Café</h1>
+    <p>Fresh • Organic • Delicious</p>
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Send us a message and we’ll get back to you as soon as possible.</p>
+
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-custom px-4">Send Message</button>
+    </form>
+
+    <!-- Optional Map -->
+    <div class="mt-5">
+      <h5 class="text-success">Visit Us</h5>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.279889161!2d-74.25986485737232!3d40.69767006855419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQxJzUyLjYiTiA3NMKwMTUnMjEuOCJX!5e0!3m2!1sen!2sph!4v1675875979556!5m2!1sen!2sph"
+        width="100%"
+        height="300"
+        style="border:0; border-radius: 10px;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Cof's Café | Fresh • Organic • Delicious</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
