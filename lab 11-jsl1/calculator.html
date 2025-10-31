@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 5 - Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      color: #2e7d32;
+    }
+
+    input, button {
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Activity 5: Simple Calculator</h2>
+
+  <label>First Number:</label><br>
+  <input type="number" id="num1"><br><br>
+
+  <label>Second Number:</label><br>
+  <input type="number" id="num2"><br><br>
+
+  <button onclick="calculateSum()">Add</button>
+
+  
+  <p id="result">Result will appear here...</p>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
