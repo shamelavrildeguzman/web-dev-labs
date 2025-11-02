@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Selection and Text Change</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e8f5e9;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #2e7d32;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="pageTitle">Welcome to My Page!</h1>
+  <button onclick="changeTitle()">Change Title</button>
+
+  <script>
+    function changeTitle() {
+      document.getElementById("pageTitle").innerText = "Updated!";
+    }
+  </script>
+
+</body>
+</html>

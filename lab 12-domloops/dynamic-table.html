@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 6 - Display Table</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e8f5e9;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #2e7d32;
+    }
+
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 70%;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #a5d6a7;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #66bb6a;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f8e9;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fruit Price List</h1>
+
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Quantity</th>
+        <th>Item</th>
+        <th>Price (₱)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    let products = [
+      { quantity: 2, item: "Apple", price: 50 },
+      { quantity: 5, item: "Banana", price: 75 },
+      { quantity: 3, item: "Mango", price: 90 },
+      { quantity: 4, item: "Orange", price: 80 },
+      { quantity: 1, item: "Grapes", price: 60 }
+    ];
+
+    let tbody = document.querySelector("#myTable tbody");
+
+    for (let i = 0; i < products.length; i++) {
+      let row = "<tr><td>" + products[i].quantity + "</td><td>" + products[i].item + "</td><td>₱" + products[i].price + "</td></tr>";
+      tbody.innerHTML += row;
+    }
+  </script>
+
+</body>
+</html>

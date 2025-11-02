@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Background Changer</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #e8f5e9;
+    }
+
+    h1 {
+      color: #2e7d32;
+    }
+
+    select, button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin: 10px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Dynamic Background Changer</h1>
+
+  <select id="colorSelect">
+    <option value="#e8f5e9">Light Green</option>
+    <option value="#c8e6c9">Soft Green</option>
+    <option value="#a5d6a7">Mint Green</option>
+  </select>
+
+  <button onclick="changeBackground()">Change Background</button>
+
+  <script>
+    function changeBackground() {
+      let selectedColor = document.getElementById("colorSelect").value;
+      document.body.style.backgroundColor = selectedColor;
+    }
+  </script>
+
+</body>
+</html>
+
