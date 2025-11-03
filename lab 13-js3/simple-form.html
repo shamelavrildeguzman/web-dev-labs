@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 1 - Simple Form</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #e8f5e9;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #2e7d32; 
+    }
+
+    form {
+      background: #ffffff;
+      display: inline-block;
+      padding: 25px 40px;
+      border-radius: 12px;
+      border: 1px solid #a5d6a7;
+      box-shadow: 0 3px 8px rgba(46, 125, 50, 0.15);
+    }
+
+    input {
+      display: block;
+      width: 250px;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid #81c784;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #388e3c;
+      box-shadow: 0 0 5px #a5d6a7;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+
+    .error {
+      color: #d32f2f;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .output {
+      margin-top: 25px;
+      background: #ffffff;
+      display: inline-block;
+      padding: 20px 30px;
+      border-radius: 12px;
+      border: 1px solid #c8e6c9;
+      min-width: 300px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .output h3 {
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Form</h1>
+
+  <form id="userForm">
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="email" id="email" placeholder="Enter your email">
+    <button type="submit">Submit</button>
+    <p id="errorMsg" class="error"></p>
+  </form>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    let submissions = []; // for storing
+
+    document.getElementById("userForm").onsubmit = function(event) {
+      event.preventDefault(); // for stop refreshing 
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let errorMsg = document.getElementById("errorMsg");
+      let output = document.getElementById("output");
+
+      if (name === "" || email === "") {
+        errorMsg.textContent = "⚠ Please fill out all fields.";
+        output.innerHTML = "";
+        return;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        errorMsg.textContent = "⚠ Please enter a valid email address.";
+        output.innerHTML = "";
+        return;
+      }
+
+      errorMsg.textContent = "";
+
+      submissions.push({ name: name, email: email });
+
+      output.innerHTML = "<h3>Form Submissions:</h3>";
+      submissions.forEach((entry, index) => {
+        output.innerHTML += `<p>${index + 1}. <strong>${entry.name}</strong> (${entry.email})</p>`;
+      });
+
+      document.getElementById("userForm").reset();
+    };
+  </script>
+
+</body>
+</html>
