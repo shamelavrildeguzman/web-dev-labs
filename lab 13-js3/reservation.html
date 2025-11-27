@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f5e6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+            border: 2px solid #4CAF50;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #1b5e20;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f1fff1;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Reservation Form</h2>
+
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Date:</label>
+    <input type="date" id="date">
+
+    <label>Time:</label>
+    <input type="time" id="time">
+
+    <label>Guests (number):</label>
+    <input type="number" id="guests" min="1">
+
+    <button onclick="submitReservation()">Submit</button>
+
+    <div id="display" class="output"></div>
+</div>
+
+<script>
+    function submitReservation() {
+        let name = document.getElementById("name").value;
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+        let guests = document.getElementById("guests").value;
+
+        if (!name || !date || !time || !guests) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        let output = `
+            <h3>Reservation Details</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Date:</strong> ${date}</p>
+            <p><strong>Time:</strong> ${time}</p>
+            <p><strong>Number of Guests:</strong> ${guests}</p>
+        `;
+
+        document.getElementById("display").innerHTML = output;
+    }
+</script>
+
+</body>
+</html>

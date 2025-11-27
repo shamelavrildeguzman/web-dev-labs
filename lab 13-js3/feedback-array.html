@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Array</title>
+</head>
+<body>
+
+<h2>Feedback List</h2>
+<ul id="output"></ul>
+
+<script>
+    console.log("JS Loaded!");
+
+    let feedbacks = ["Great coffee!", "Nice ambiance"];
+
+    let list = document.getElementById("output");
+
+    if (!list) {
+        console.log("ERROR: output element NOT FOUND");
+    }
+
+    feedbacks.forEach(function(text) {
+        let li = document.createElement("li");
+        li.textContent = text;
+        list.appendChild(li);
+    });
+</script>
+
+</body>
+</html>

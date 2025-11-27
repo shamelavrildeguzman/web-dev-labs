@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form with Array Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f5e6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+            border: 2px solid #4CAF50;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #1b5e20;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        .list {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f1fff1;
+            border-left: 4px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contact Form</h2>
+    
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Message:</label>
+    <textarea id="message" rows="4"></textarea>
+
+    <button onclick="storeData()">Submit</button>
+
+    <div id="display" class="list"></div>
+</div>
+
+<script>
+    let contacts = [];
+
+    function storeData() {
+        let name = document.getElementById("name").value;
+        let message = document.getElementById("message").value;
+
+        if (name === "" || message === "") {
+            alert("Please fill out both fields.");
+            return;
+        }
+
+        contacts.push({name: name, message: message});
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+        displayData();
+    }
+
+    function displayData() {
+        let output = "<h3>Submitted Messages:</h3>";
+        contacts.forEach((contact, index) => {
+            output += `<p><strong>${index + 1}. ${contact.name}:</strong> ${contact.message}</p>`;
+        });
+        document.getElementById("display").innerHTML = output;
+    }
+</script>
+
+</body>
+</html>
