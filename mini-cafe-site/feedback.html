@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cof's Café - Feedback</title>
+  <link rel="stylesheet" href="feedback.css">
+
+  <script>
+    let feedbackList = [];
+
+    function submitFeedback(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const feedback = document.getElementById("feedback").value.trim();
+
+      if (!name || !email || !feedback) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+
+      feedbackList.push({ name, email, feedback })
+      displayFeedback();
+
+
+      document.getElementById("fbForm").reset();
+    }
+
+    function displayFeedback() {
+      const output = document.getElementById("fbOutput");
+      output.innerHTML = "";
+
+      feedbackList.forEach(item => {
+        output.innerHTML += `
+          <div class="feedback-card">
+            <p><strong>Name:</strong> ${item.name}</p>
+            <p><strong>Email:</strong> ${item.email}</p>
+            <p><strong>Feedback:</strong> ${item.feedback}</p>
+          </div>
+        `;
+      });
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Cof's Café</h1>
+    <p>Fresh • Organic • Delicious</p>
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="feedback.html" class="active">Feedback</a>
+  </nav>
+
+  <section class="section">
+    <h2>Customer Feedback</h2>
+
+    <form id="fbForm" onsubmit="submitFeedback(event)">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label for="feedback">Your Feedback</label>
+      <textarea id="feedback" rows="5" placeholder="Leave your feedback here..."></textarea>
+
+      <button type="submit" class="btn">Submit Feedback</button>
+    </form>
+
+    <h3 style="margin-top:40px;color:#2e7d32;font-family:'Segoe UI',sans-serif;">
+      Our Customer Feedback
+    </h3>
+
+    <div id="fbOutput" style="margin-top:20px;"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Cof's Café. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
